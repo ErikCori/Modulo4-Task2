@@ -3,7 +3,7 @@ package com.codeoftheweb.salvo;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 public class GamePlayer {
@@ -20,20 +20,14 @@ public class GamePlayer {
     @JoinColumn(name = "game_id")
     private Game game;
 
-    private Date creationDate;
-
     public GamePlayer(){}
 
-    public GamePlayer(Date creationDate, Player player, Game game){
-        this.creationDate = creationDate;
+    public GamePlayer(Player player, Game game){
         this.player = player;
         this.game = game;
     }
 
     //Getters
-    public Date getCreationDate(){
-        return creationDate;
-    }
     public Player getPlayer(){
         return player;
     }
@@ -42,9 +36,6 @@ public class GamePlayer {
     }
 
     //Setters
-    public void setCreationDate(Date creationDate){
-        this.creationDate = creationDate;
-    }
     public void setPlayer(Player player){
         this.player = player;
     }

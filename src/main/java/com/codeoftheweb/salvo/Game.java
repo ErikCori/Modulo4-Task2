@@ -3,6 +3,9 @@ package com.codeoftheweb.salvo;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -19,17 +22,18 @@ public class Game {
 
     @OneToMany(mappedBy = "game", fetch = FetchType.EAGER)
     Set<GamePlayer> gamePlayers;
-    private Date creationDate;
+    private LocalDateTime creationDate;
+    //DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/mm/yyyy, HH:mm:ss");
 
     public Game(){}
 
-    public Game(Date creationDate){
+    public Game(LocalDateTime creationDate){
         this.creationDate = creationDate;
     }
-    public void setCreationDate(Date creationDate){
+    public void setCreationDate(LocalDateTime creationDate){
         this.creationDate = creationDate;
     }
-    public Date getCreationDate(){
+    public LocalDateTime getCreationDate(){
         return creationDate;
     }
 
