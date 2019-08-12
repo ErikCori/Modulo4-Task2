@@ -30,6 +30,9 @@ public class Game {
     public Game(LocalDateTime creationDate){
         this.creationDate = creationDate;
     }
+    public long getId(){
+        return id;
+    }
     public void setCreationDate(LocalDateTime creationDate){
         this.creationDate = creationDate;
     }

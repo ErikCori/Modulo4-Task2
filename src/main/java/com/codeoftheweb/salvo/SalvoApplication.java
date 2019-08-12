@@ -47,7 +47,28 @@ public class SalvoApplication {
 			//save a couple of PlayerGames
 
 			GamePlayer gamePlayer1 = new GamePlayer(player1, game1);
+			GamePlayer gamePlayer2 = new GamePlayer(player2, game1);
+			GamePlayer gamePlayer3 = new GamePlayer(player1, game2);
+			GamePlayer gamePlayer4 = new GamePlayer(player2, game2);
+			GamePlayer gamePlayer5 = new GamePlayer(player2, game3);
+			GamePlayer gamePlayer6 = new GamePlayer(player3, game3);
+			GamePlayer gamePlayer7 = new GamePlayer(player1, game4);
+			GamePlayer gamePlayer8 = new GamePlayer(player2, game4);
+			GamePlayer gamePlayer9 = new GamePlayer(player3, game5);
+			GamePlayer gamePlayer10 = new GamePlayer(player1, game5);
+			GamePlayer gamePlayer11 = new GamePlayer(player4, game6);
+
 			repository3.save(gamePlayer1);
+			repository3.save(gamePlayer2);
+			repository3.save(gamePlayer3);
+			repository3.save(gamePlayer4);
+			repository3.save(gamePlayer5);
+			repository3.save(gamePlayer6);
+			repository3.save(gamePlayer7);
+			repository3.save(gamePlayer8);
+			repository3.save(gamePlayer9);
+			repository3.save(gamePlayer10);
+			repository3.save(gamePlayer11);
 		};
 	}
 
