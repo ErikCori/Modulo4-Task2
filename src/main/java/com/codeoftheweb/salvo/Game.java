@@ -22,6 +22,7 @@ public class Game {
 
     @OneToMany(mappedBy = "game", fetch = FetchType.EAGER)
     Set<GamePlayer> gamePlayers;
+
     private LocalDateTime creationDate;
     //DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/mm/yyyy, HH:mm:ss");
 
@@ -30,19 +31,24 @@ public class Game {
     public Game(LocalDateTime creationDate){
         this.creationDate = creationDate;
     }
+    //Getters
     public long getId(){
         return id;
-    }
-    public void setCreationDate(LocalDateTime creationDate){
-        this.creationDate = creationDate;
     }
     public LocalDateTime getCreationDate(){
         return creationDate;
     }
+    public Set<GamePlayer> getGamePlayers() {
+        return gamePlayers;
+    }
 
-    public String toString() {
+    //Setters
+    public void setCreationDate(LocalDateTime creationDate){
+        this.creationDate = creationDate;
+    }
 
-        return "creationDate";
+    public void setGamePlayers(Set<GamePlayer> gamePlayers) {
+        this.gamePlayers = gamePlayers;
     }
 
     public void addGamePlayer(GamePlayer gamePlayer){

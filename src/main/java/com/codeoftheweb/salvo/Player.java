@@ -28,6 +28,9 @@ public class Player {
         this.username = username;
     }
 
+    public long getId(){
+        return id;
+    }
     public void setUsername(String username) {
         this.username = username;
     }
