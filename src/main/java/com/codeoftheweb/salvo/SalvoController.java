@@ -1,6 +1,6 @@
 package com.codeoftheweb.salvo;
 
-import org.hibernate.transform.AliasToBeanConstructorResultTransformer;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +23,7 @@ public class SalvoController {
         Map<String, Object> dto = new LinkedHashMap<>();
         dto.put("id", game.getId());
         dto.put("created", game.getCreationDate());
-        dto.put("gamePlayers", game.getGamePlayers().stream().filter(gamePlayer -> gamePlayer.getGame() == game.getId()));
+        dto.put("gamePlayers", game.getGamePlayers().stream().map(g -> makeGamePlayerDto(g)));
         return dto;
     }
     private Map<String, Object> makeGamePlayerDto(GamePlayer gamePlayer){

@@ -26,15 +26,23 @@ public class GamePlayer {
 
     public GamePlayer(){}
 
-    public GamePlayer(Player player, Game game){
+    public GamePlayer(Date joinDate, Game game, Player player){
+        this.joinDate = joinDate;
         this.player = player;
         this.game = game;
     }
 
     //Getters
+
+    public Date getJoinDate() {
+        return joinDate;
+    }
+
     public long getId(){
         return id;
     }
+
+    @JsonIgnore
     public Player getPlayer(){
         return player;
     }

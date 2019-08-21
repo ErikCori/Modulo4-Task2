@@ -21,21 +21,21 @@ public class Game {
     private long id;
 
     @OneToMany(mappedBy = "game", fetch = FetchType.EAGER)
-    Set<GamePlayer> gamePlayers;
+    private Set<GamePlayer> gamePlayers;
 
-    private LocalDateTime creationDate;
-    //DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/mm/yyyy, HH:mm:ss");
+    private Date creationDate;
+
 
     public Game(){}
 
-    public Game(LocalDateTime creationDate){
+    public Game(Date creationDate){
         this.creationDate = creationDate;
     }
     //Getters
     public long getId(){
         return id;
     }
-    public LocalDateTime getCreationDate(){
+    public Date getCreationDate(){
         return creationDate;
     }
     public Set<GamePlayer> getGamePlayers() {
@@ -43,7 +43,7 @@ public class Game {
     }
 
     //Setters
-    public void setCreationDate(LocalDateTime creationDate){
+    public void setCreationDate(Date creationDate){
         this.creationDate = creationDate;
     }
 
