@@ -11,23 +11,8 @@
     <body>
         <h1>Salvo!!!!!</h1>
         <div class="container" id="app">
-            <table class="table table-bordered">
-                <thead class="thead">
-                    <tr>
-                        <th>DateGame</th>
-                        <th>Player1</th>
-                        <th>Player2</th>
-                        <th>Winner</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="game in games">
-                        <td>{{game.created}}</td>
-                        <td>{{game.gamePlayers[0].player.email}}</td>
-                        <td>{{game.gamePlayers[1].player.email}}</td>
-                        <td>{{game.gamePlayers[0].player.email}}</td>
-                    </tr>
-                </tbody>
+            <table class="table table-bordered" id="salvo-table">
+                
             </table>
         </div>
     </body>
