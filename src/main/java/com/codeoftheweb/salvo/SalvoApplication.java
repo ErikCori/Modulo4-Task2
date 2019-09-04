@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.Arrays;
 import java.util.Date;
 
 
@@ -25,11 +26,7 @@ public class SalvoApplication {
 			Player player4 = new Player("t.almeida@ctu.gov");
 			Player player5 = new Player("null");
 
-			playerRepository.save(player1);
-			playerRepository.save(player2);
-			playerRepository.save(player3);
-			playerRepository.save(player4);
-			playerRepository.save(player5);
+			playerRepository.saveAll(Arrays.asList(player1, player2, player3, player4, player5));
 
 			//save a couple of games
 
@@ -51,16 +48,10 @@ public class SalvoApplication {
 			Game game7 = new Game(date7);
 			Game game8 = new Game(date8);
 
-			gameRepository.save(game1);
-			gameRepository.save(game2);
-			gameRepository.save(game3);
-			gameRepository.save(game4);
-			gameRepository.save(game5);
-			gameRepository.save(game6);
-			gameRepository.save(game7);
-			gameRepository.save(game8);
+			gameRepository.saveAll(Arrays.asList(game1, game2, game3, game4, game5, game6, game7, game8));
 
-			//save a couple of PlayerGames
+
+			//save a couple of GamePlayers
 
 			GamePlayer gamePlayer1 = new GamePlayer(date1, game1, player1);
 			GamePlayer gamePlayer2 = new GamePlayer(date1, game1, player2);
@@ -80,22 +71,10 @@ public class SalvoApplication {
 			GamePlayer gamePlayer16 = new GamePlayer(date8, game8, player4);
 
 
-			gamePlayerRepository.save(gamePlayer1);
-			gamePlayerRepository.save(gamePlayer2);
-			gamePlayerRepository.save(gamePlayer3);
-			gamePlayerRepository.save(gamePlayer4);
-			gamePlayerRepository.save(gamePlayer5);
-			gamePlayerRepository.save(gamePlayer6);
-			gamePlayerRepository.save(gamePlayer7);
-			gamePlayerRepository.save(gamePlayer8);
-			gamePlayerRepository.save(gamePlayer9);
-			gamePlayerRepository.save(gamePlayer10);
-			gamePlayerRepository.save(gamePlayer11);
-			gamePlayerRepository.save(gamePlayer12);
-			gamePlayerRepository.save(gamePlayer13);
-			gamePlayerRepository.save(gamePlayer14);
-			gamePlayerRepository.save(gamePlayer15);
-			gamePlayerRepository.save(gamePlayer16);
+			gamePlayerRepository.saveAll(Arrays.asList(gamePlayer1, gamePlayer2, gamePlayer3, gamePlayer4, gamePlayer5, gamePlayer6,
+													gamePlayer7, gamePlayer8, gamePlayer9, gamePlayer10, gamePlayer11, gamePlayer12,
+													gamePlayer13, gamePlayer14, gamePlayer15, gamePlayer16));
+
 
 		};
 	}

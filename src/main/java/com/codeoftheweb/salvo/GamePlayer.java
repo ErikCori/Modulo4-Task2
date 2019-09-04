@@ -24,6 +24,7 @@ public class GamePlayer {
     @JoinColumn(name = "game_id")
     private Game game;
 
+    //Constructor
     public GamePlayer(){}
 
     public GamePlayer(Date joinDate, Game game, Player player){
@@ -33,7 +34,6 @@ public class GamePlayer {
     }
 
     //Getters
-
     public Date getJoinDate() {
         return joinDate;
     }
@@ -51,11 +51,4 @@ public class GamePlayer {
         return game;
     }
 
-    //Setters
-    public void setPlayer(Player player){
-        this.player = player;
-    }
-    public void setGame(Game game){
-        this.game = game;
-    }
 }

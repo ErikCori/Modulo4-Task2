@@ -22,6 +22,7 @@ public class Player {
 
     private String username;
 
+    //Constructor
     public Player(){}
 
     public Player(String username){
@@ -29,26 +30,18 @@ public class Player {
         this.username = username;
     }
 
+    //Getters
     public long getId(){
+
         return id;
-    }
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getUsername() {
 
         return username;
     }
-    public String toString() {
-
-        return username;
-    }
-    public void addGamePlayer(GamePlayer gamePlayer){
-        gamePlayer.setPlayer(this);
-        gamePlayers.add(gamePlayer);
-    }
     public List<Game> getGames(){
         return gamePlayers.stream().map(gamePlayer -> gamePlayer.getGame()).collect(toList());
     }
+
 }

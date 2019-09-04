@@ -25,37 +25,31 @@ public class Game {
 
     private Date creationDate;
 
-
+    //Constructor
     public Game(){}
 
     public Game(Date creationDate){
         this.creationDate = creationDate;
     }
+
     //Getters
     public long getId(){
+
         return id;
     }
     public Date getCreationDate(){
+
         return creationDate;
     }
     public Set<GamePlayer> getGamePlayers() {
+
         return gamePlayers;
-    }
-
-    //Setters
-    public void setCreationDate(Date creationDate){
-        this.creationDate = creationDate;
-    }
-
-    public void setGamePlayers(Set<GamePlayer> gamePlayers) {
-        this.gamePlayers = gamePlayers;
-    }
-
-    public void addGamePlayer(GamePlayer gamePlayer){
-        gamePlayer.setGame(this);
-        gamePlayers.add(gamePlayer);
     }
     public List<Player> getPlayers(){
         return gamePlayers.stream().map(gamePlayer -> gamePlayer.getPlayer()).collect(toList());
     }
+
+    //Setters
+
+
 }
